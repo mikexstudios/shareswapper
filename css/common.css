@@ -1,0 +1,82 @@
+/*-------------------------------------------------
+STRUCTURE
+-------------------------------------------------*/
+
+/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.5.0
+The following is the reset-fonts.css:
+*/
+html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym {border:0;font-variant:normal;}sup {vertical-align:text-top;}sub {vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}body {font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}table {font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+
+strong { font-weight: bold; }
+/* End Yahoo! copyright */
+
+body {
+	font-family:verdana;
+	font-size:85%;
+	color: #000;
+	background: #fff;
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a{
+	color: #009;
+	text-decoration: none;
+	border-bottom: 1px dotted #4040D9;
+}
+a:hover{
+	text-decoration: none;
+	border-bottom: none;
+}
+a img {
+	border: 0;
+}
+
+/*-------------------------------------------------
+HEADER
+-------------------------------------------------*/
+
+#header {
+	
+}
+
+#header h1 {	
+
+}
+
+/*-------------------------------------------------
+BODY
+-------------------------------------------------*/
+
+#content {
+	
+}
+
+#content p {
+
+}
+
+/*-------------------------------------------------
+FOOTER
+-------------------------------------------------*/
+
+#footer {
+	margin-top: 50px;
+	font-size: 77%;
+	text-align: center;
+	color: #333;
+}
+
+
+/*-------------------------------------------------
+OTHER
+-------------------------------------------------*/
+
+.highlight {
+	background-color: #ffc;
+}
