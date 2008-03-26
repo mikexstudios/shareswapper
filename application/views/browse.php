@@ -1,3 +1,4 @@
+<?php defined('SYSPATH') or die('No direct script access.'); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
@@ -77,9 +78,7 @@
 
 </div>
 
-<div id="footer">
-  <p><a href="about">about</a> | <a href="contact">contact</a> | <a href="copyright">copyright policy</a> | {execution_time} seconds</p>
-</div>
+<?php echo $this->load->view('page-footer'); ?>
 
 </div> <!-- End div for wrap -->
 
