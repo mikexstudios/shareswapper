@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>Add File Link: Share Swapper - find files from online file hosting providers</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<style type="text/css" media="screen">
+	/* <![CDATA[ */
+	@import url("css/common.css");
+	@import url("css/add.css");
+	/* ]]> */
+	</style>
+	
+	<!-- <link rel="shortcut icon" href="favicon.ico" /> -->
+	
+	<script type="text/javascript" src="js/jquery.js"></script>   
+	<script type="text/javascript">                                         
+		// we will add our javascript code here   
+		$(document).ready(function() {
+			// do stuff when DOM is ready
+			$("#content div.addlinkform p.form_add_another_link a").click(function(){
+   			$("#content div.addlinkform div.form_link_wrapper").append('<p>Paste your link from the online file hosting service here.</p><input class="form_link" name="link[]" type="text" size="82" maxlength="255" /><br />');
+			});
+		});                                  
+	</script>  
+</head>
+
+<body>
+<div id="wrap">
+
+<div id="header">
+	<div class="logo">
+		<h2><a href="http://www.shareswapper.com">Share Swapper</a></h2>
+	</div>
+
+	<div class="navigation">
+		<p><strong><a href="search">Search Files</a></strong> | <a href="browse">Browse Files</a> | 
+		<a href="recent">Most Recent Files</a> | <a href="add">Submit a File Link!</a></p>  
+	</div>
+	
+	<div class="search">
+		<form action="search" method="GET">
+			<input type="text" name="keywords" class="searchbox" />
+			<input type="submit" value="Search!" class="searchsubmit" />
+		</form>
+		<!-- TODO: Add checkboxes for categories -->
+	</div>
+</div>
+
+<div id="content">
+	<div class="contentheader">
+		<h2>Add a File Link</h2>
+	</div>
+	
+	<div class="addlinkinstructions">
+		<h3>Instructions:</h3>
+		<ol>
+			<li>First, make sure your file is uploaded to one or more 
+			<span class="highlight">online file hosting providers</span>. We 
+			<strong>recommend</strong>
+			using <a href="http://www.sharebee.com/">ShareBee</a> (which will help you 
+			mirror your files automatically) or <a href="http://www.mediafire.com">MediaFire</a>
+			(easy to download from). However, you can certainly use other file hosts such
+			as <a href="http://www.megaupload.com">MegaUpload</a>, 
+			<a href="http://www.rapidshare.com">Rapidshare</a>, 
+			<a href="http://www.sendspace.com">Sendspace</a>, etc.</li>
+			
+			<li>Next, <span class="highlight">fill out the form below</span>. Try to
+			be as <em>detailed as possible</em>. If you want to include an image in
+			your description, a cool service to host images with is 
+			<a href="http://allyoucanupload.webshots.com/">AllYouCanUpload</a>. If 
+			your file has a password, please specify it!</li>
+			
+			<li><strong>That's it! Click submit! Thanks for sharing!</strong></li>
+		</ol>
+	</div>
+	
+	<div class="addlinkform">
+	<p><strong class="highlight">All fields are required!</strong></p>
+		<form action="add/submit" method="POST">
+			<div>
+				<label>Category:</label><br />
+  			<select name="category" class="form_category"> 
+					<option value="other">Other</option>
+					<option value="anime">Anime</option>
+					<option value="books">Books</option>
+					<option value="games">Games</option>
+					<option value="movies">Movies</option>
+					<option value="music">Music</option>
+					<option value="pictures">Pictures</option>
+					<option value="software">Software</option>
+					<option value="tv">TV Shows</option>
+				</select>
+  		</div>
+			<div>
+				<label>Name / Title of File:</label>
+				<p>What is the name of your file? (ie. Ubuntu Linux 8.04 Hardy Heron)</p>
+  			<input class="form_title" name="title" type="text" size="70" maxlength="255" /> 
+  		</div>
+			<div>
+				<label>Description:</label>
+				<p>Style your text, include links, and images with 
+				<a href="http://en.wikipedia.org/wiki/BBCode">BBCode</a>. We recommend
+				using <a href="http://allyoucanupload.webshots.com/">AllYouCanUpload</a>
+				to host your images.</p>
+  			<textarea class="form_description" name="description" rows="15" cols="80"></textarea>
+  		</div>  
+			<div class="form_link_wrapper">
+				<!-- Use this so the page doesn't scroll up when adding additional links: -->
+				<a name="form_link_anchor"></a>
+				<label>Link(s) to File:</label>
+				<p>Paste your link from the online file hosting service here.</p>
+  			<input class="form_link" name="link[]" type="text" size="82" maxlength="255" /><br />
+  		</div>
+  		<p class="form_add_another_link"><a href="#form_link_anchor">Have more than one link? Click here to add another link 
+				field.</a></p>
+  		<div class="form_submit_wrapper">
+  			<input class="form_submit" type="submit" value="Submit File Link!" />
+  		</div>
+		</form>
+	</div>
+
+</div>
+
+<div id="footer">
+  <p><a href="about">about</a> | <a href="contact">contact</a> | <a href="copyright">copyright policy</a> | {execution_time} seconds</p>
+</div>
+
+</div> <!-- End div for wrap -->
+
+</body>
+
+</html>

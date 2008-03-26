@@ -1,0 +1,130 @@
+/*-------------------------------------------------
+STRUCTURE
+-------------------------------------------------*/
+
+/*-------------------------------------------------
+HEADER
+-------------------------------------------------*/
+
+#header {
+	margin-top: 25px;
+}
+
+#header .logo {
+	float: left;
+}
+#header .logo h2 {
+
+}
+#header .logo h2 a {
+	display: block;
+	background: url('../images/logo_w228.gif') no-repeat left;
+	width: 228px;
+	height: 53px;
+	text-indent: -3000px;
+	border-bottom: none;
+	margin-right: 10px;
+}
+
+#header .navigation {
+	padding-top: 5px;
+	font-size: 85%;
+}
+
+#header .search{
+	margin-top: 5px;
+}
+#header .search .searchbox {
+	width: 370px;
+	font-size: 123.1%;
+	border: 2px solid #c33;
+	border-right: none;
+}
+#header .search .searchsubmit {
+	margin-left: -5px;
+	font-size: 123.1%;
+	background-color: #c33;
+	border: 2px solid #c33;
+	border-left: none;
+	color: #fff;
+}
+#header .search .searchsubmit:hover {
+	color: #ccc;
+}
+
+/*-------------------------------------------------
+BODY
+-------------------------------------------------*/
+
+#content {
+	margin-top: 25px;
+}
+
+#content p {
+
+}
+
+#content .contentheader {
+
+}
+#content .contentheader h2 {
+	font-size: 161.6%;
+}
+
+#content .addlinkinstructions {
+	margin-top: 10px;
+}
+#content .addlinkinstructions ol li{
+	margin-bottom: 15px;
+}
+
+#content .addlinkform {
+	margin-top: 10px;
+}
+#content .addlinkform form {
+	margin-top: 10px;
+}
+#content .addlinkform form label {
+	font-weight: bold;
+}
+#content .addlinkform form p {
+	margin-top: 5px;
+	font-size: 85%;
+}
+#content .addlinkform form input, select, textarea {
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+#content .addlinkform form .form_category {
+	font-size: 123.1%;
+}
+#content .addlinkform form .form_title {
+	font-size: 131%;
+	width: 90%;
+}
+#content .addlinkform form .form_description {
+	width: 90%;
+}
+#content .addlinkform form .form_link {
+	font-size: 123.1%;
+	margin-bottom: 0px;
+	width: 90%;
+}
+#content .addlinkform form .form_submit_wrapper {
+	text-align: center;
+	margin-top: 20px;
+}
+#content .addlinkform form .form_submit {
+	border: 1px solid #999;
+	font-size: 153.9%;
+	width: 50%;
+}
+
+
+/*-------------------------------------------------
+FOOTER
+-------------------------------------------------*/
+
+#footer {
+
+}

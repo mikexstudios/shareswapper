@@ -1,0 +1,94 @@
+/*-------------------------------------------------
+STRUCTURE
+-------------------------------------------------*/
+
+/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.5.0
+The following is from reset.css and fonts.css:
+*/
+html{color:#000;background:#FFF;}
+body,div,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+/**
+ * Percents could work for IE, but for backCompat purposes, we are using keywords.
+ * x-small is for IE6/7 quirks mode.
+ */
+body {font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}
+table {font-size:inherit;font:100%;}
+/**
+ * Bump up IE to get to 13px equivalent
+ */
+pre,code,kbd,samp,tt {font-family:monospace;*font-size:108%;line-height:100%;}
+
+/* End Yahoo! copyright */
+
+body {
+	font-family:verdana;
+	font-size:85%;
+	color: #000;
+	background: #fff;
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a{
+	color: #009;
+	text-decoration: none;
+	border-bottom: 1px dotted #4040D9;
+}
+a:hover{
+	text-decoration: none;
+	border-bottom: none;
+}
+a img {
+	border: 0;
+}
+
+/*-------------------------------------------------
+HEADER
+-------------------------------------------------*/
+
+#header {
+	
+}
+
+#header h1 {	
+
+}
+
+/*-------------------------------------------------
+BODY
+-------------------------------------------------*/
+
+#content {
+	
+}
+
+#content p {
+
+}
+
+/*-------------------------------------------------
+FOOTER
+-------------------------------------------------*/
+
+#footer {
+	margin-top: 50px;
+	font-size: 77%;
+	text-align: center;
+	color: #333;
+}
+
+
+/*-------------------------------------------------
+OTHER
+-------------------------------------------------*/
+
+.highlight {
+	background-color: #ffc;
+}
