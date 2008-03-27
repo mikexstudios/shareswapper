@@ -54,6 +54,25 @@ BODY
 #content .filedownload h3 {
 	
 }
+#content .filedownload ol li {
+	margin-bottom: 8px;
+}
+
+#content .permalink {
+	padding-top: 15px;
+}
+#content .permalink h3 {
+	margin-bottom: 5px;
+}
+#content .permalink form {
+	text-align: center;
+}
+#content .permalink .permalink-input {
+	margin-top: 10px;
+	width: 90%;
+	font-size: 116%;
+	padding: 2px;
+}
 
 /*-------------------------------------------------
 FOOTER

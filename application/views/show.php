@@ -66,6 +66,15 @@
 			</ol>
 		</div>
 	</div>
+	
+	<div class="permalink">
+		<h3>Link to this page:</h3>
+		<p>Just <span class="highlight">copy and paste the link below</span> when sharing with your friends!</p>
+		<form>
+			<!-- Note: Javascript copy doesn't work with Firefox because of innate security -->
+			<input class="permalink-input" type="text" name="permalink-input" value="<?php echo url::base().url::current(); ?>" size="90" readonly onclick="javascript:select();document.execCommand('copy');" />
+		</form>
+	</div>
 
 </div>
 
