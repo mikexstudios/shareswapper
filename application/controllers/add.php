@@ -4,6 +4,8 @@ class Add_Controller extends Controller {
 	
 	function index() {
 		$home_view = new View('add');
+		$home_view->form_category = ''; //Set to something to avoid error
+		$home_view->form_links = array();
 		$home_view->render(TRUE);
 	}
 	
@@ -16,40 +18,48 @@ class Add_Controller extends Controller {
 			'category' => array('Category', '=trim|required[1,100]|callback_valid_category'),
 			'title' => array('Title', '=trim|required[1,255]'),
 			'description' => array('Description', '=trim|required[1,20000]'),
-			'link' => array('Link(s)', 'required[1,400]|valid_url') //Arrays are automatically broken up into elements and validated.
+			'link' => array('Link(s)', '=trim|required[1,400]|valid_url') //Arrays are automatically broken up into elements and validated.
 		));
 		
 		if($in_data->run())
 		{
-			echo 'Validated!';
+			//Validation was a success. Now let's do stuff!
+			
+			$link = new Link_Model;
+			$link->category = $in_data->category;
+			$link->title = $in_data->title;
+			$link->description = $in_data->description;
+			$link->updated_time = time();
+			$link->save();
+			
+			//Also save links to the linksdata table:
+			$linksdata = new Linksdata_Model;
+			foreach($in_data->link as $each_link)
+			{
+				$linksdata->clear(); //Need this so that our model resets after each save.
+				$linksdata->link_id = $link->id;
+				$linksdata->key = 'link';
+				$linksdata->value = $each_link;
+				$linksdata->save();
+			} 
+			
+			//Show success page
+			$success_view = new View('add-success');
+			$success_view->file_link_url = url::site('show/'.url::int_to_short_id($link->id));
+			$success_view->render(true);
+			
 		}
 		else
 		{
-			echo 'Failed!';
-			echo $in_data->error_string;
+			//Validation failed!
+			$home_view = new View('add');
+			$home_view->error = $in_data->error_string;
+			$home_view->form_category = $in_data->category;
+			$home_view->form_title = $in_data->title;
+			$home_view->form_description = $in_data->description;
+			$home_view->form_links = $in_data->link; //Array
+			$home_view->render(true);
 		}
-		
-		/*
-		$in_data->add_rules('category', 'required', 'length[1,100]', 'category');
-		$in_data->add_rules('title', 'required', 'length[1,255]');
-		$in_data->add_rules('description', 'required', 'length[1,10000]');
-		$in_data->add_rules('link', 'required', 'link_array');
-		
-		if($in_data->validate())
-		{
-			echo 'Validated!';
-		}
-		else
-		{
-			echo 'Failed!';
-			print_r($in_data->errors());
-			$in_data->message('2', 'Field s is required');
-			echo $in_data->message();
-		}
-		*/
-		
-		//var_dump($_POST);
-		//print_r($_POST['link']);
 	}
 	
 	/**

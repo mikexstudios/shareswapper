@@ -8,49 +8,82 @@ class Validation extends Validation_Core {
 		parent::__construct();
 	}
 
+	// --------------------------------------------------------------------
+	
 	/**
-	 * Validate file link categories.
+	 * Set Select
 	 *
-	 * @param   string   category
-	 * @return  boolean
-	 */
-	public function category($in_category) {
-		switch($in_category)
+	 * Enables pull-down lists to be set to the value the user
+	 * selected in the event of an error
+	 *
+	 * @access	public
+	 * @param	string
+	 * @param	string
+	 * @return	string
+	 */	
+	function set_select($field = '', $value = '')
+	{
+		if ($field == '' OR $value == '' OR  ! isset($_POST[$field]))
 		{
-			case 'other':
-			case 'anime':
-			case 'books':
-			case 'games':
-			case 'movies':
-			case 'music':
-			case 'pictures':
-			case 'software':
-			case 'tv':
-				return true;
-				break;
-			default:
-				return false;
+			return '';
 		}
-		
-		return false;
+			
+		if ($_POST[$field] == $value)
+		{
+			return ' selected="selected"';
+		}
 	}
-
+	
+	// --------------------------------------------------------------------
+	
 	/**
-	 * Validate file links.
+	 * Set Radio
 	 *
-	 * @param   string   category
-	 * @return  boolean
-	 */
-	public function link_array($in_links) {
-		foreach($in_links as $link)
+	 * Enables radio buttons to be set to the value the user
+	 * selected in the event of an error
+	 *
+	 * @access	public
+	 * @param	string
+	 * @param	string
+	 * @return	string
+	 */	
+	function set_radio($field = '', $value = '')
+	{
+		if ($field == '' OR $value == '' OR  ! isset($_POST[$field]))
 		{
-			if(valid::url($link) == false)
-			{
-				return false;
-			}
+			return '';
 		}
-		
-		return true;
+			
+		if ($_POST[$field] == $value)
+		{
+			return ' checked="checked"';
+		}
+	}
+	
+	// --------------------------------------------------------------------
+	
+	/**
+	 * Set Checkbox
+	 *
+	 * Enables checkboxes to be set to the value the user
+	 * selected in the event of an error
+	 *
+	 * @access	public
+	 * @param	string
+	 * @param	string
+	 * @return	string
+	 */	
+	function set_checkbox($field = '', $value = '')
+	{
+		if ($field == '' OR $value == '' OR  ! isset($_POST[$field]))
+		{
+			return '';
+		}
+			
+		if ($_POST[$field] == $value)
+		{
+			return ' checked="checked"';
+		}
 	}
 
 }

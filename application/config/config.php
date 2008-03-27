@@ -2,7 +2,7 @@
 /**
  * Domain name, with the installation directory. Default: localhost/kohana/
  */
-$config['site_domain'] = 'localhost/shareswapper2/';
+$config['site_domain'] = 'localhost/shareswapper/';
 
 /**
  * Default protocol used to access the website. Default: http

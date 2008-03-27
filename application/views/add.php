@@ -10,21 +10,21 @@
 
 	<style type="text/css" media="screen">
 	/* <![CDATA[ */
-	@import url("css/common.css");
-	@import url("css/common-page.css");
-	@import url("css/add.css");
+	@import url("<?php echo url::site('css/common.css'); ?>");
+	@import url("<?php echo url::site('css/common-page.css'); ?>");
+	@import url("<?php echo url::site('css/add.css'); ?>");
 	/* ]]> */
 	</style>
 	
 	<!-- <link rel="shortcut icon" href="favicon.ico" /> -->
 	
-	<script type="text/javascript" src="js/jquery.js"></script>   
+	<script type="text/javascript" src="<?php echo url::site('js/jquery.js'); ?>"></script>   
 	<script type="text/javascript">                                         
 		// we will add our javascript code here   
 		$(document).ready(function() {
 			// do stuff when DOM is ready
 			$("#content div.addlinkform p.form_add_another_link a").click(function(){
-   			$("#content div.addlinkform div.form_link_wrapper").append('<p>Paste your link from the online file hosting service here.</p><input class="form_link" name="link[]" type="text" size="82" maxlength="255" /><br />');
+   			$("#content div.addlinkform div.form_link_wrapper").append('<p>Paste your <em>additional</em> link from the online file hosting service here.</p><input class="form_link" name="link[]" type="text" size="82" maxlength="255" tabindex="4" /><br />');
 			});
 		});                                  
 	</script>  
@@ -35,16 +35,16 @@
 
 <div id="header">
 	<div class="logo">
-		<h2><a href="http://www.shareswapper.com">Share Swapper</a></h2>
+		<h2><a href="<?php echo url::base(); ?>">Share Swapper</a></h2>
 	</div>
 
 	<div class="navigation">
-		<p><strong><a href="search">Search Files</a></strong> | <a href="browse">Browse Files</a> | 
-		<a href="recent">Most Recent Files</a> | <a href="add">Submit a File Link!</a></p>  
+		<p><strong><a href="<?php echo url::site('search'); ?>">Search Files</a></strong> | <a href="<?php echo url::site('browse'); ?>">Browse Files</a> | 
+		<a href="<?php echo url::site('recent'); ?>">Most Recent Files</a> | <a href="<?php echo url::site('add'); ?>">Submit a File Link!</a></p>  
 	</div>
 	
 	<div class="search">
-		<form action="search" method="GET">
+		<form action="<?php echo url::site('search'); ?>" method="GET">
 			<input type="text" name="keywords" class="searchbox" />
 			<input type="submit" value="Search!" class="searchsubmit" />
 		</form>
@@ -82,25 +82,26 @@
 	
 	<div class="addlinkform">
 	<p><strong class="highlight">All fields are required!</strong></p>
-		<form action="add/submit" method="POST">
+	<?php echo isset($error) ? $error : ''; ?>
+		<form action="<?php echo url::site('add/submit'); ?>" method="POST">
 			<div>
 				<label>Category:</label><br />
-  			<select name="category" class="form_category"> 
-					<option value="other">Other</option>
-					<option value="anime">Anime</option>
-					<option value="books">Books</option>
-					<option value="games">Games</option>
-					<option value="movies">Movies</option>
-					<option value="music">Music</option>
-					<option value="pictures">Pictures</option>
-					<option value="software">Software</option>
-					<option value="tv">TV Shows</option>
+  			<select name="category" class="form_category" tabindex="1"> 
+					<option value="other"<?php echo ($form_category == 'other') ? ' selected="selected"' : ''; ?>>Other</option>
+					<option value="anime"<?php echo ($form_category == 'anime') ? ' selected="selected"' : ''; ?>>Anime</option>
+					<option value="books"<?php echo ($form_category == 'books') ? ' selected="selected"' : ''; ?>>Books</option>
+					<option value="games"<?php echo ($form_category == 'games') ? ' selected="selected"' : ''; ?>>Games</option>
+					<option value="movies"<?php echo ($form_category == 'movies') ? ' selected="selected"' : ''; ?>>Movies</option>
+					<option value="music"<?php echo ($form_category == 'music') ? ' selected="selected"' : ''; ?>>Music</option>
+					<option value="pictures"<?php echo ($form_category == 'pictures') ? ' selected="selected"' : ''; ?>>Pictures</option>
+					<option value="software"<?php echo ($form_category == 'software') ? ' selected="selected"' : ''; ?>>Software</option>
+					<option value="tv"<?php echo ($form_category == 'tv') ? ' selected="selected"' : ''; ?>>TV Shows</option>
 				</select>
   		</div>
 			<div>
 				<label>Name / Title of File:</label>
 				<p>What is the name of your file? (ie. Ubuntu Linux 8.04 Hardy Heron)</p>
-  			<input class="form_title" name="title" type="text" size="70" maxlength="255" /> 
+  			<input class="form_title" name="title" type="text" size="70" maxlength="255" value="<?php echo isset($form_title) ? $form_title : ''; ?>" tabindex="2" /> 
   		</div>
 			<div>
 				<label>Description:</label>
@@ -108,19 +109,31 @@
 				<a href="http://en.wikipedia.org/wiki/BBCode">BBCode</a>. We recommend
 				using <a href="http://allyoucanupload.webshots.com/">AllYouCanUpload</a>
 				to host your images.</p>
-  			<textarea class="form_description" name="description" rows="15" cols="80"></textarea>
+  			<textarea class="form_description" name="description" rows="15" cols="80" tabindex="3"><?php echo isset($form_description) ? $form_description : ''; ?></textarea>
   		</div>  
 			<div class="form_link_wrapper">
 				<!-- Use this so the page doesn't scroll up when adding additional links: -->
 				<a name="form_link_anchor"></a>
 				<label>Link(s) to File:</label>
 				<p>Paste your link from the online file hosting service here.</p>
-  			<input class="form_link" name="link[]" type="text" size="82" maxlength="255" /><br />
+  			<input class="form_link" name="link[]" type="text" size="82" maxlength="255" value="<?php echo isset($form_links[0]) ? $form_links[0] : ''; ?>" tabindex="4" /><br />
+  			<?php 
+				foreach($form_links as $index=>$each_link)
+				{
+					if($index!=0 && !empty($each_link)) //We ignore the first link
+					{
+				?>
+						<p>Paste your <em>additional</em> link from the online file hosting service here.</p>
+  					<input class="form_link" name="link[]" type="text" size="82" maxlength="255" value="<?php echo $each_link; ?>" tabindex="4" /><br />
+				<?php
+					}
+				}
+				?>
   		</div>
   		<p class="form_add_another_link"><a href="#form_link_anchor">Have more than one link? Click here to add another link 
 				field.</a></p>
   		<div class="form_submit_wrapper">
-  			<input class="form_submit" type="submit" value="Submit File Link!" />
+  			<input class="form_submit" type="submit" value="Submit File Link!" tabindex="5" />
   		</div>
 		</form>
 	</div>
