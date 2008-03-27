@@ -96,6 +96,7 @@
 					<option value="pictures"<?php echo ($form_category == 'pictures') ? ' selected="selected"' : ''; ?>>Pictures</option>
 					<option value="software"<?php echo ($form_category == 'software') ? ' selected="selected"' : ''; ?>>Software</option>
 					<option value="tv"<?php echo ($form_category == 'tv') ? ' selected="selected"' : ''; ?>>TV Shows</option>
+					<option value="adult"<?php echo ($form_category == 'adult') ? ' selected="selected"' : ''; ?>>Adult</option>
 				</select>
   		</div>
 			<div>

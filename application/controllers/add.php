@@ -80,6 +80,7 @@ class Add_Controller extends Controller {
 			case 'pictures':
 			case 'software':
 			case 'tv':
+			case 'adult':
 				return true;
 				break;
 			default:
