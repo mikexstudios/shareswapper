@@ -16,18 +16,7 @@
 	/* ]]> */
 	</style>
 	
-	<!-- <link rel="shortcut icon" href="favicon.ico" /> -->
-	
-	<script type="text/javascript" src="<?php echo url::base(); ?>js/jquery.js"></script>   
-	<script type="text/javascript">                                         
-		// we will add our javascript code here   
-		$(document).ready(function() {
-			// do stuff when DOM is ready
-			$("#content div.addlinkform p.form_add_another_link a").click(function(){
-   			$("#content div.addlinkform div.form_link_wrapper").append('<p>Paste your <em>additional</em> link from the online file hosting service here.</p><input class="form_link" name="link[]" type="text" size="82" maxlength="255" tabindex="4" /><br />');
-			});
-		});                                  
-	</script>  
+	<!-- <link rel="shortcut icon" href="favicon.ico" /> --> 
 </head>
 
 <body>

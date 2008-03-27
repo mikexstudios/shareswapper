@@ -26,7 +26,7 @@
 
 <div id="content">
 	<div class="contentheader">
-		<h2>Search results for <em class="highlight">test</em> (500 files found):</h2>
+		<h2>Browsing the <span class="highlight"><?php echo $category_name; ?> category</span> (<?php echo $number_records; ?> files found):</h2>
 	</div>
 	
 	<div class="searchresults">
@@ -40,18 +40,14 @@
 			</tr>
 		</thead>
 		<tbody>
+		<?php foreach($category_records as $record_obj): //Uses dumb ORM Iterator ?>
 			<tr>
-				<td>Music</td>
-				<td>Jimi Hendrix - The Blues</td>
-				<td>26 Mar 08</td>
-				<td>7</td>
+				<td><a href="<?php echo url::site('browse/'.$record_obj->category); ?>"><?php echo category::full_name($record_obj->category); ?></a></td>
+				<td><a href="<?php echo url::site('show/'.url::int_to_short_id($record_obj->id)); ?>"><?php echo $record_obj->title; ?></a></td>
+				<td><?php echo date('dS F Y g:i A', $record_obj->updated_time); ?></td>
+				<td></td>
 			</tr>
-			<tr class="alt">
-				<td>Music</td>
-				<td>Jimi Hendrix - Are You Experienced?</td>
-				<td>25 Mar 08</td>
-				<td>5</td>
-			</tr>
+		<?php endforeach; ?>
 		</tbody>
 		</table>
 	</div>

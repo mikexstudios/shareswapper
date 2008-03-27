@@ -15,6 +15,7 @@ class category {
 			case 'software':
 			case 'tv':
 			case 'adult':
+			case 'all': //Not a real category, but used in browse
 				return true;
 				break;
 			default:
@@ -36,6 +37,7 @@ class category {
 			case 'pictures':
 			case 'software':
 			case 'adult':
+			case 'all': //Not a real category, but used in browse
 				return ucfirst($in_category);
 			case 'tv':
 				return 'TV Shows';
