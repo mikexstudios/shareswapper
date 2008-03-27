@@ -12,9 +12,9 @@
 
 	<style type="text/css" media="screen">
 	/* <![CDATA[ */
-	@import url("<?php echo url::site('css/common.css'); ?>");
-	@import url("<?php echo url::site('css/common-page.css'); ?>");
-	@import url("<?php echo url::site('css/add.css'); ?>");
+	@import url("<?php echo url::base(); ?>css/common.css");
+	@import url("<?php echo url::base(); ?>css/common-page.css");
+	@import url("<?php echo url::base(); ?>css/add.css");
 	/* ]]> */
 	</style>
 	

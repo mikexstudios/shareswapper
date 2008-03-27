@@ -10,15 +10,15 @@
 
 	<style type="text/css" media="screen">
 	/* <![CDATA[ */
-	@import url("<?php echo url::site('css/common.css'); ?>");
-	@import url("<?php echo url::site('css/common-page.css'); ?>");
-	@import url("<?php echo url::site('css/add.css'); ?>");
+	@import url("<?php echo url::base(); ?>css/common.css");
+	@import url("<?php echo url::base(); ?>css/common-page.css");
+	@import url("<?php echo url::base(); ?>css/add.css");
 	/* ]]> */
 	</style>
 	
 	<!-- <link rel="shortcut icon" href="favicon.ico" /> -->
 	
-	<script type="text/javascript" src="<?php echo url::site('js/jquery.js'); ?>"></script>   
+	<script type="text/javascript" src="<?php echo url::base(); ?>js/jquery.js"></script>   
 	<script type="text/javascript">                                         
 		// we will add our javascript code here   
 		$(document).ready(function() {

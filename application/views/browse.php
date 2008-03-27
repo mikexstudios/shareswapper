@@ -10,9 +10,9 @@
 
 	<style type="text/css" media="screen">
 	/* <![CDATA[ */
-	@import url("css/common.css");
-	@import url("css/common-page.css");
-	@import url("css/browse.css");
+	@import url("<?php echo url::base(); ?>css/common.css");
+	@import url("<?php echo url::base(); ?>css/common-page.css");
+	@import url("<?php echo url::base(); ?>css/browse.css");
 	/* ]]> */
 	</style>
 	
@@ -24,7 +24,7 @@
 
 <div id="header">
 	<div class="logo">
-		<h2><a href="http://www.shareswapper.com">Share Swapper</a></h2>
+		<h2><a href="<?php echo url::base(); ?>">Share Swapper</a></h2>
 	</div>
 
 	<div class="navigation">

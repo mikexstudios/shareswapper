@@ -10,8 +10,8 @@
 
 	<style type="text/css" media="screen">
 	/* <![CDATA[ */
-	@import url("css/common.css");
-	@import url("css/home.css");
+	@import url("<?php echo url::base(); ?>css/common.css");
+	@import url("<?php echo url::base(); ?>css/home.css");
 	/* ]]> */
 	</style>
 	
@@ -22,7 +22,7 @@
 <div id="wrap">
 
 <div id="header">
-	<h1><a href="http://www.shareswapper.com">Share Swapper</a></h1>
+	<h1><a href="<?php echo url::base(); ?>">Share Swapper</a></h1>
 	<p>a large index of <strong>user submitted and verified files</strong> 
 	from online file hosting providers that include <span class="highlight">rapidshare, 
 	megaupload, mediafire, sendspace, and more</span>!</p>
@@ -31,8 +31,8 @@
 <div id="content">
 	
 	<div class="navigation">
-		<p><strong>Search Files</strong> | <a href="browse">Browse Files</a> | 
-		<a href="recent">Most Recent Files</a> | <a href="add">Submit a File Link!</a></p>  
+		<p>Search Files | <a href="<?php echo url::site('browse'); ?>">Browse Files</a> | 
+		<a href="<?php echo url::site('recent'); ?>">Most Recent Files</a> | <a href="<?php echo url::site('add'); ?>">Submit a File Link!</a></p>  
 	</div>
 	
 	<div class="search">
@@ -51,9 +51,7 @@
 	
 </div>
 
-<div id="footer">
-  <p><a href="about">about</a> | <a href="contact">contact</a> | <a href="copyright">copyright policy</a> | {execution_time} seconds</p>
-</div>
+<?php echo $this->load->view('page-footer'); ?>
 
 </div> <!-- End div for wrap -->
 
