@@ -51,7 +51,7 @@ class url extends url_Core {
 		
 		$out -= 46656; // Start at 4 characters.
 		
-		return $out;  
+		return (int)$out;  
 	}
 
 }

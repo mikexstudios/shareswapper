@@ -69,25 +69,7 @@ class Add_Controller extends Controller {
 	 * @return  boolean
 	 */
 	public function valid_category($in_category) {
-		switch($in_category)
-		{
-			case 'other':
-			case 'anime':
-			case 'books':
-			case 'games':
-			case 'movies':
-			case 'music':
-			case 'pictures':
-			case 'software':
-			case 'tv':
-			case 'adult':
-				return true;
-				break;
-			default:
-				return false;
-		}
-		
-		return false;
+		return category::is_valid($in_category);
 	}
 	
 }
