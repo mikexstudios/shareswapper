@@ -1,0 +1,91 @@
+/*-------------------------------------------------
+STRUCTURE
+-------------------------------------------------*/
+
+/*-------------------------------------------------
+HEADER
+-------------------------------------------------*/
+
+#header {
+	
+}
+
+/*-------------------------------------------------
+BODY
+-------------------------------------------------*/
+
+#content {
+	
+}
+
+#content p {
+
+}
+
+#content .addlinkinstructions {
+	margin-top: 10px;
+}
+#content .addlinkinstructions ol li{
+	margin-bottom: 15px;
+}
+
+#content .addlinkform {
+	margin-top: 10px;
+}
+#content .addlinkform form {
+	margin-top: 10px;
+}
+#content .addlinkform form label {
+	font-weight: bold;
+}
+#content .addlinkform form p {
+	margin-top: 5px;
+	font-size: 85%;
+}
+#content .addlinkform form input, select, textarea {
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+#content .addlinkform form .form_category {
+	font-size: 123.1%;
+}
+#content .addlinkform form .form_title {
+	font-size: 131%;
+	width: 90%;
+}
+#content .addlinkform form .form_description {
+	width: 90%;
+}
+#content .addlinkform form .form_link {
+	font-size: 123.1%;
+	margin-bottom: 0px;
+	width: 90%;
+}
+#content .addlinkform form .form_add_another_link {
+	
+}
+#content .addlinkform form .form_submit_wrapper {
+	text-align: center;
+	margin-top: 20px;
+}
+#content .addlinkform form .form_submit {
+	border: 1px solid #999;
+	font-size: 153.9%;
+	width: 50%;
+}
+
+
+#content .addlinksuccessmessage {
+	margin-top: 15px;
+	font-size: 116%;
+	text-align: center;
+	line-height: 140%;
+}
+
+/*-------------------------------------------------
+FOOTER
+-------------------------------------------------*/
+
+#footer {
+
+}
