@@ -22,7 +22,7 @@
 <body>
 <div id="wrap">
 
-<?php echo $this->load->view('page-header'); ?>
+<?php echo $page_header; ?>
 
 <div id="content">
 	<div class="contentheader">

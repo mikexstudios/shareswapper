@@ -11,7 +11,7 @@
 	
 	<div class="search">
 		<form action="<?php echo url::site('search'); ?>" method="GET">
-			<input type="text" name="keywords" class="searchbox" />
+			<input type="text" name="keywords" class="searchbox" value="<?php echo isset($search_keywords) ? $search_keywords : '';?>" />
 			<input type="submit" value="Search!" class="searchsubmit" />
 		</form>
 		<!-- TODO: Add checkboxes for categories -->
