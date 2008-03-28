@@ -36,7 +36,7 @@
 	</div>
 	
 	<div class="search">
-		<form action="search" method="GET">
+		<form action="<?php echo url::site('search'); ?>" method="GET">
 			<input type="text" name="keywords" class="searchbox" />
 			<input type="submit" value="Search!" class="searchsubmit" />
 		</form>

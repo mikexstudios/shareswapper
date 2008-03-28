@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 26, 2008 at 08:19 PM
+-- Generation Time: Mar 28, 2008 at 01:41 AM
 -- Server version: 5.0.45
 -- PHP Version: 5.2.4
 
@@ -27,8 +27,8 @@ CREATE TABLE `links` (
   `category` varchar(255) default NULL,
   `updated_time` int(11) NOT NULL,
   PRIMARY KEY  (`id`),
-  FULLTEXT KEY `titledesc` (`title`,`description`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  FULLTEXT KEY `title` (`title`,`description`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 -- --------------------------------------------------------
 
@@ -44,4 +44,4 @@ CREATE TABLE `linksdata` (
   `value` varchar(255) default NULL,
   PRIMARY KEY  (`id`),
   KEY `link_id` (`link_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
