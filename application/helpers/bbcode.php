@@ -39,6 +39,7 @@ class bbcode {
 		}	
 		$text = preg_replace_callback('/\[code\](.*?)\[\/code\]/ms', "escape", $text);
 		$text = strip_tags($text); //People can still do XSS through this!
+		$text = htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
 		
 		// BBCode to find...
 		$in = array( 	 '/\[b\](.*?)\[\/b\]/ms',	

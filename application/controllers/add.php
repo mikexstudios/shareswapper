@@ -23,11 +23,17 @@ class Add_Controller extends Controller {
 		
 		if($in_data->run())
 		{
+			//Secure inputs
+			$in_data->category = strip_tags($in_data->category);
+			$in_data->category = htmlentities($in_data->category, ENT_QUOTES, 'UTF-8');
+			$in_data->title = strip_tags($in_data->title);
+			$in_data->title = htmlentities($in_data->title, ENT_QUOTES, 'UTF-8');
+			
 			//Validation was a success. Now let's do stuff!
 			$link = new Link_Model;
 			$link->category = $in_data->category;
 			$link->title = $in_data->title;
-			$link->description = bbcode::parse($in_data->description);
+			$link->description = bbcode::parse($in_data->description); //Input escaped in bbcode::parse
 			$link->updated_time = time();
 			$link->save();
 			

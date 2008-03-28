@@ -5,6 +5,8 @@ class Search_Controller extends Controller {
 	function index() {
 		//Check if we have a search
 		$keywords = $this->input->get('keywords');
+		$keywords = strip_tags($keywords);
+		$keywords = htmlentities($keywords, ENT_QUOTES, 'UTF-8');
 		
 		if(!empty($keywords))
 		{

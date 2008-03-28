@@ -17,6 +17,9 @@ class Browse_Controller extends Controller {
 	}
 
 	function index($in_category='') {
+		$in_category = strip_tags($in_category);
+		$in_category = htmlentities($in_category, ENT_QUOTES, 'UTF-8');
+		
 		if(empty($in_category) || strlen($in_category) > 20 || !category::is_valid($in_category))
 		{
 			//Show category selection page
