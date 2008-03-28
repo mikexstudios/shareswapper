@@ -24,11 +24,10 @@ class Add_Controller extends Controller {
 		if($in_data->run())
 		{
 			//Validation was a success. Now let's do stuff!
-			
 			$link = new Link_Model;
 			$link->category = $in_data->category;
 			$link->title = $in_data->title;
-			$link->description = $in_data->description;
+			$link->description = bbcode::parse($in_data->description);
 			$link->updated_time = time();
 			$link->save();
 			
@@ -57,7 +56,14 @@ class Add_Controller extends Controller {
 			$home_view->form_category = $in_data->category;
 			$home_view->form_title = $in_data->title;
 			$home_view->form_description = $in_data->description;
-			$home_view->form_links = $in_data->link; //Array
+			if(is_array($in_data->link))
+			{
+				$home_view->form_links = $in_data->link; //Array
+			}
+			else
+			{
+				$home_view->form_links = array(); //Array
+			}
 			$home_view->render(true);
 		}
 	}
