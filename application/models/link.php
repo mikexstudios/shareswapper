@@ -25,6 +25,17 @@ class Link_Model extends ORM {
 			AGAINST(".self::$db->escape($in_keywords).")
 			");
 		
+		//Try boolean search (gets around FULLTEXT natual language stopwords)
+		if($result->count() <= 0)
+		{
+			$result = self::$db->query("
+				SELECT *, MATCH(`title`, `description`) AGAINST(".self::$db->escape($in_keywords).") AS score
+				FROM `links`
+				WHERE MATCH(`title`, `description`)
+				AGAINST(".self::$db->escape($in_keywords)." IN BOOLEAN MODE)
+				");
+		}
+		
 		//If we don't have results, then we do a REGEX search.
 		//NOTE: REGEX search is VERY slow!
 		//This overcomes some FULLTEXT limitations.
